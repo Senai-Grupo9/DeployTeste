@@ -53,4 +53,4 @@ jobs:
           app-name: 'deployfrontfab'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_B608BBFBB98B40D29A5D2AFD25B8B8E3 }}
-          package: .
+          package: 'build'
