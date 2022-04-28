@@ -1,13 +1,88 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+:root {
+    --blue-gradient: linear-gradient(90deg, #99BBC5 0.52%, #9DBDC6 30.57%, #9EBDC6 76.68%, #A0BEC6 100%);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box
+}
+
+body {
+    background-color: #84836A;
+}
+
+main {
+    background-color: #FFF;
+    border-radius: 15px;
+}
+
+.cam_page_modal {
+    width: 70vw;
+    height: 80vh;
+    margin: 10vh auto;
+}
+
+.cam_page_modal header {
+    height: 12%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 15px;
+}
+
+.cam_page_modal img {
+    height: 100%;
+    margin: 0;
+}
+
+.cam_page_modal .cam_content {
+    display: flex;
+    height: 88%;
+}
+
+.cam_page_modal .search {
+    width: 30%;
+    height: 100%;
+    font-family: 'Open Sans', sans-serif;
+    color: #90949D;
+    background-color: red;
+}
+
+.cam_page_modal .search input {
+    display: block;
+    border: 1px solid #D3D4D8;
+    height: 30px;
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 5px;
+    padding: 5px;
+    padding-right: 30px;
+    color: #90949D;
+    background: url(./assets/search.png) no-repeat right 0;
+    background-size: 20px;
+    background-position-x: 97%;
+    background-position-y: 3px;
+    overflow: hidden;
+}
+
+.cam_page_modal .search .list {
+    display: flex;
+    flex-direction: column;
+    margin-top: 8px;
+    height: 85%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.cam_page_modal .search .object {
+    font-size: 13px;
+    border-bottom: 1px solid #90949D;
+    width: 80%;
+    margin: 0 auto;
+    padding: 5px 0;
+    display: flex;
+    align-items: center;
 }
