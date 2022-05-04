@@ -20,18 +20,20 @@ export default function CheckIn() {
                     </nav>
                 </div>
             </header>
-            <article className="cam_content">
-                <table>
-                    <th class="tdbordaright">Nome do Jogador</th>
-                    <th class="tdbordaleft">Equipe</th>
-                    <th></th>
-                    <tr>
-                        <td id="tdbordaright">Thiago</td>
-                        <td id="tdbordaleft">SENAI Cytechs</td>
+            <article className="registro_content">
+                <table className="table_registro">
+                    <th>Pessoa</th>
+                    <th>Entrada</th>
+                    <th>Saída</th>
+                    <tr className="item_registro">
+                        <td>Thiago</td>
+                        <td>10:26 04/05/2022</td>
+                        <td>10:29 04/05/2022</td>
                     </tr>
-                    <tr>
-                        <td id="tdbordaright">Odirlei</td>
-                        <td id="tdbordaleft">SENAI Cytechs</td>
+                    <tr className="item_registros">
+                        <td>Odirlei</td>
+                        <td>10:26 04/05/2022</td>
+                        <td>10:29 04/05/2022</td>
                     </tr>
                 </table>
             </article>

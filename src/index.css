@@ -77,6 +77,11 @@ main {
     height: 88%;
 }
 
+.cam_page_modal .registro_content {
+    display: flex;
+    justify-content: center;
+}
+
 .cam_page_modal .search {
     width: 30%;
     height: 100%;
@@ -188,4 +193,9 @@ main {
     display: flex;
     justify-content: space-around;
     margin-top: 50px;
+}
+
+.table_registro {
+    border-spacing: 0;
+    width: 60vw;
 }
