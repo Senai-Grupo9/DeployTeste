@@ -53,4 +53,4 @@ jobs:
           app-name: 'severino'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_C7734C0DB492473AB4066B8545C446E5 }}
-          package: 'build' .
+          package: build
