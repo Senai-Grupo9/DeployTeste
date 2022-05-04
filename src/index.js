@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import Home from './pages/home/Home'
 import Login from './pages/login/Login'
 import LogUsuario from './pages/logusuario/LogUsuario';
+import CheckIn from './pages/checkin/CheckIn';
 
 const routing = (
   <Router>
@@ -14,6 +15,7 @@ const routing = (
         <Route exact path="/" component={Home}></Route>
         <Route path="/login" component={Login}></Route>
         <Route path="/logusuario" component={LogUsuario}></Route>
+        <Route path="/checkin" component={CheckIn}></Route>
       </Switch>
     </div>
   </Router>

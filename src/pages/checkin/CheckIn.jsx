@@ -3,9 +3,7 @@ import logo from "../../assets/logo.png";
 import adicionar from "../../assets/adicionar.png";
 import { React, useState, useEffect } from 'react';
 
-import { mock } from "../../services/api";
-
-export default function LogUsuario() {
+export default function CheckIn() {
 
     return (
         <main className="cam_page_modal">
@@ -16,17 +14,26 @@ export default function LogUsuario() {
                         <img src={logo} alt="Logo do Sistema Severino" />
                     </nav>
                     <nav className="content_pages">
-                        <a href="" className="marcado_usuarios">Usuários</a>
-                        <a href="" className="">Registros</a>
+                        <a href="" className="">Usuários</a>
+                        <a href="" className="marcado_registros">Registros</a>
                         <a href="" className="">Home</a>
                     </nav>
                 </div>
             </header>
             <article className="cam_content">
-                <span>
-                <a href="#"><img src={adicionar} href="#" alt="Botão de adicionar" />Cadastrar Novo Usuário</a>
-                </span>
-                <table></table>
+                <table>
+                    <th class="tdbordaright">Nome do Jogador</th>
+                    <th class="tdbordaleft">Equipe</th>
+                    <th></th>
+                    <tr>
+                        <td id="tdbordaright">Thiago</td>
+                        <td id="tdbordaleft">SENAI Cytechs</td>
+                    </tr>
+                    <tr>
+                        <td id="tdbordaright">Odirlei</td>
+                        <td id="tdbordaleft">SENAI Cytechs</td>
+                    </tr>
+                </table>
             </article>
         </main >
     )

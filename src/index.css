@@ -55,7 +55,15 @@ main {
     padding: 0px 50px;
 }
 
-.usuario_nav {
+.marcado_usuarios {
+    text-decoration: underline;
+}
+
+.marcado_registros {
+    text-decoration: underline;
+}
+
+.marcado_home {
     text-decoration: underline;
 }
 
