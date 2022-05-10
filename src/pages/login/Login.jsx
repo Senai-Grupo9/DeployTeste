@@ -6,7 +6,7 @@ import { Link } from "react-router-dom"
 import logo from '../../assets/logosev.png'
 import FabLogo from '../../assets/fab-logo.png'
 import IconSenha from '../../assets/eye.png'
-import imagemLogin from '../../assets/escritorio.png'
+import imagemLogin from '../../assets/fotoescritorio.png'
 
 
 
@@ -99,8 +99,7 @@ export default class Login extends Component {
                         <img src={FabLogo} className="foto_logo_fab" alt="Logo da Fab Soluções"></img>
                     </div>
                 </form>
-
-                <img src={imagemLogin} className="fotoLogin" alt=""></img>
+                    <img src={imagemLogin} className="fotoLogin" alt=""></img>
             </main>
         );
     }
