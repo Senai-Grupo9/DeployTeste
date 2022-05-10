@@ -1,13 +1,11 @@
 import { Component } from "react"
-import axios from "axios"
 import { db } from '../../services/api'
 import { parseJwt, usuarioAutenticado } from "../../services/auth"
-import { Link } from "react-router-dom"
 import logo from '../../assets/logosev.png'
 import FabLogo from '../../assets/fab-logo.png'
 import IconSenha from '../../assets/eye.png'
 import imagemLogin from '../../assets/fotoescritorio.png'
-
+import React, { useState } from 'react'
 
 
 export default class Login extends Component {
@@ -17,7 +15,7 @@ export default class Login extends Component {
             email: '',
             senha: '',
             erroMensagem: '',
-            isLoading: false
+            isLoading: false,
         };
     };
 
