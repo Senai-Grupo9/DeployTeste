@@ -5,7 +5,7 @@ import logo from '../../assets/logosev.png'
 import FabLogo from '../../assets/fab-logo.png'
 import IconSenha from '../../assets/eye.png'
 import imagemLogin from '../../assets/fotoescritorio.png'
-import React, { useState } from 'react'
+
 
 
 export default class Login extends Component {
@@ -38,13 +38,7 @@ export default class Login extends Component {
                     let base64 = localStorage.getItem('usuario-login').split('.')[1];
                     console.log(base64);
 
-                    if (parseJwt().role === '1') {
-                        this.props.history.push('/home');
-                    }
-
-                    else {
-                        this.props.history.push('/home');
-                    }
+                    this.props.history.push('/home');
                 }
             })
             .catch(() => {
