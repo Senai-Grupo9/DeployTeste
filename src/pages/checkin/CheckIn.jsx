@@ -4,7 +4,6 @@ import adicionar from "../../assets/adicionar.png";
 import { React, useState, useEffect } from 'react';
 
 export default function CheckIn() {
-
     return (
         <main className="cam_page_modal">
             <header>
