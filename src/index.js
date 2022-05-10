@@ -8,6 +8,7 @@ import Login from './pages/login/Login'
 import LogUsuario from './pages/logusuario/LogUsuario';
 import CheckIn from './pages/checkin/CheckIn';
 
+
 const routing = (
   <Router>
     <div>

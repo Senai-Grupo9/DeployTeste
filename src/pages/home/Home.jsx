@@ -44,7 +44,7 @@ export default function Home() {
                 <img src={fab_logo} alt="" />
                 <img src={logo} alt="" />
             </header>
-            <div className="cam_content">
+            {/* <div className="cam_content">
                 <section className="search">
                     <input type="text" placeholder="O que você procura...?" onChange={onChange} />
                     <div className="list">
@@ -57,7 +57,7 @@ export default function Home() {
                 <section className="camera">
 
                 </section>
-            </div>
+            </div> */}
         </main >
     )
 }

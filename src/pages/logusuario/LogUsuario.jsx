@@ -1,9 +1,6 @@
 import fab_logo from "../../assets/fab-logo.png";
 import logo from "../../assets/logo.png";
-import adicionar from "../../assets/adicionar.png";
 import { React, useState, useEffect } from 'react';
-
-import { mock } from "../../services/api";
 
 export default function LogUsuario() {
 
@@ -22,12 +19,13 @@ export default function LogUsuario() {
                     </nav>
                 </div>
             </header>
-            <article className="cam_content">
+            {/* <article className="cam_content">
                 <span>
                 <a href="#"><img src={adicionar} href="#" alt="Botão de adicionar" />Cadastrar Novo Usuário</a>
                 </span>
                 <table></table>
-            </article>
+            </article> */}
+            
         </main >
     )
 }

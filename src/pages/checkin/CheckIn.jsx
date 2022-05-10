@@ -20,7 +20,7 @@ export default function CheckIn() {
                     </nav>
                 </div>
             </header>
-            <article className="registro_content">
+            {/* <article className="registro_content">
                 <table className="table_registro">
                     <th>Pessoa</th>
                     <th>Entrada</th>
@@ -36,7 +36,7 @@ export default function CheckIn() {
                         <td>10:29 04/05/2022</td>
                     </tr>
                 </table>
-            </article>
+            </article> */}
         </main >
     )
 }
