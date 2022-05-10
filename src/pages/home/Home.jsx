@@ -41,23 +41,16 @@ export default function Home() {
     return (
         <main className="cam_page_modal">
             <header>
-                <img src={fab_logo} alt="" />
-                <img src={logo} alt="" />
+                <div className="popovercontainer">
+                <img src={fab_logo} alt="logo da fab soluções" className="" />
+                <span className="popover">
+                FabSoluções<br/>
+                ID 509103<br/>
+                CheckIN 8:15<br/>
+                </span>
+                </div>
+                <img src={logo} alt="logo do severino" />
             </header>
-            {/* <div className="cam_content">
-                <section className="search">
-                    <input type="text" placeholder="O que você procura...?" onChange={onChange} />
-                    <div className="list">
-                        {
-                            toList()
-                        }
-                    </div>
-                </section>
-
-                <section className="camera">
-
-                </section>
-            </div> */}
         </main >
     )
 }
