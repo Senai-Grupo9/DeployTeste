@@ -225,7 +225,7 @@ main {
 .invalidlogin {
     color: red;
     /* display: none; */
-    /* visibility: hidden; */
+    visibility: hidden;
 }
 
 .popovercontainer{
