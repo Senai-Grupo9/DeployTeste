@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 export const db = axios.create({
-    baseURL: 'http://localhost:5000/api'
+    baseURL: 'https://backfab.azurewebsites.net/api'
 })
 
 export const mock = axios.create({
