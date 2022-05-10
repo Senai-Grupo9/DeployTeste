@@ -13,8 +13,8 @@ const routing = (
   <Router>
     <div>
       <Switch>
-        <Route exact path="/" component={Home}></Route>
-        <Route path="/login" component={Login}></Route>
+        <Route exact path="/home" component={Home}></Route>
+        <Route path="/" component={Login}></Route>
         <Route path="/logusuario" component={LogUsuario}></Route>
         <Route path="/checkin" component={CheckIn}></Route>
       </Switch>

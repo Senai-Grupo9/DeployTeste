@@ -191,11 +191,34 @@ main {
 
 .login_form .fotos_login {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    width: 350px;
     margin-top: 50px;
+}
+
+.login_form .foto_logo_fab {
+    display: flex;
+    width: 229px;
+    height: 100px;
+}
+
+.login_form .foto_logo {
+    display: flex;
+    width: 100px;
+    height: 100px;
 }
 
 .table_registro {
     border-spacing: 0;
     width: 60vw;
+}
+
+.login_form .labels {
+    display: flex;
+    justify-content: space-between;
+}
+
+.invalidlogin {
+    color: red;
+    
 }

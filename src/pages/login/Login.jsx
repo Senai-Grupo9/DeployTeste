@@ -41,11 +41,11 @@ export default class Login extends Component {
                     console.log(base64);
 
                     if (parseJwt().role === '1') {
-                        this.props.history.push('/');
+                        this.props.history.push('/home');
                     }
 
                     else {
-                        this.props.history.push('/');
+                        this.props.history.push('/home');
                     }
                 }
             })
@@ -66,7 +66,10 @@ export default class Login extends Component {
                     <h1>Bem Vindo</h1>
                     <span>Seja bem-vindo, digite suas credenciais.</span>
                     <div className="item">
-                        <label>Email</label>
+                        <div className="labels">
+                            <label>Email</label>
+                            <label className="invalidlogin">Login ou Senha inválidos!</label>
+                        </div>
                         <input
                             className="input__login"
                             type="text"
