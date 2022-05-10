@@ -49,7 +49,7 @@ export default function Home() {
                 CheckIN 8:15<br/>
                 </span>
                 </div>
-                <img src={logo} alt="logo do severino" />
+                <a href="../checkin"><img src={logo} alt="logo do severino" /></a>
             </header>
         </main >
     )

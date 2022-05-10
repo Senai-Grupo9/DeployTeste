@@ -1,6 +1,5 @@
 import fab_logo from "../../assets/fab-logo.png";
 import logo from "../../assets/logo.png";
-import adicionar from "../../assets/adicionar.png";
 import { React, useState, useEffect } from 'react';
 
 export default function CheckIn() {
