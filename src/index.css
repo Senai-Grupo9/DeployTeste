@@ -224,8 +224,10 @@ main {
 
 .invalidlogin {
     color: red;
-    
+    /* display: none; */
+    /* visibility: hidden; */
 }
+
 .popovercontainer{
     position: relative;
   }

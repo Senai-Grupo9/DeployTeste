@@ -7,6 +7,7 @@ import Home from './pages/home/Home'
 import Login from './pages/login/Login'
 import LogUsuario from './pages/logusuario/LogUsuario';
 import CheckIn from './pages/checkin/CheckIn';
+import erro from './pages/404/404'
 
 
 const routing = (
@@ -14,9 +15,10 @@ const routing = (
     <div>
       <Switch>
         <Route exact path="/home" component={Home}></Route>
-        <Route path="/" component={Login}></Route>
+        <Route path="/erro" component={erro}/>
         <Route path="/logusuario" component={LogUsuario}></Route>
         <Route path="/checkin" component={CheckIn}></Route>
+        <Route path="/" component={Login}></Route>
       </Switch>
     </div>
   </Router>

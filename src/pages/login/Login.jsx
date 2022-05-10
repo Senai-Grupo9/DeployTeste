@@ -1,8 +1,6 @@
 import { Component } from "react"
-import axios from "axios"
 import { db } from '../../services/api'
 import { parseJwt, usuarioAutenticado } from "../../services/auth"
-import { Link } from "react-router-dom"
 import logo from '../../assets/logosev.png'
 import FabLogo from '../../assets/fab-logo.png'
 import IconSenha from '../../assets/eye.png'
@@ -17,7 +15,7 @@ export default class Login extends Component {
             email: '',
             senha: '',
             erroMensagem: '',
-            isLoading: false
+            isLoading: false,
         };
     };
 
@@ -40,13 +38,7 @@ export default class Login extends Component {
                     let base64 = localStorage.getItem('usuario-login').split('.')[1];
                     console.log(base64);
 
-                    if (parseJwt().role === '1') {
-                        this.props.history.push('/home');
-                    }
-
-                    else {
-                        this.props.history.push('/home');
-                    }
+                    this.props.history.push('/checkin');
                 }
             })
             .catch(() => {
