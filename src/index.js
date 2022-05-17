@@ -29,10 +29,16 @@ const routing = (
       <Switch>
         <Route exact path="/" component={Login}/>
         <PrivateRoute path="/home" component={Home}/>
+<<<<<<< HEAD
         <PrivateRoute path="/log" component={Logpessoa}/>
         <PrivateRoute path="/checkin" component={CheckIn}/>
 
         
+=======
+        <PrivateRoute path="/checkin" component={CheckIn}/>
+        <PrivateRoute path="/log" component={Logpessoa}/>
+  
+>>>>>>> 18e3cafe6be33231b2dad29f4823c4916fbaf838
         <Route path="/notfound" component={erro}/>
         <Redirect to ="/notfound"/>
       </Switch>

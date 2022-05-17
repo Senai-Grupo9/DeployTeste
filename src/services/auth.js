@@ -10,3 +10,7 @@ export const parseJwt = () => {
 };
 
 export const GetItem = () => localStorage.getItem('usuario-login');
+<<<<<<< HEAD
+=======
+
+>>>>>>> 18e3cafe6be33231b2dad29f4823c4916fbaf838
