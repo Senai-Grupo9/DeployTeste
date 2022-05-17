@@ -6,12 +6,7 @@ export const parseJwt = () => {
     let base64 = localStorage.getItem('usuario-login').split('.')[1];
 
     // converte o valor de base64 para string e em seguida para JSON
-<<<<<<< HEAD
     return JSON.parse( window.atob(base64) );
 };
 
 export const GetItem = () => localStorage.getItem('usuario-login');
-=======
-    return JSON.parse(window.atob(base64));
-};
->>>>>>> b82f873a04cb4be22398ddab73cecdef521f6457

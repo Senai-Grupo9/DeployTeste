@@ -22,11 +22,7 @@ export default function CheckIn() {
                         <img src={logo} alt="Logo do Sistema Severino" />
                     </nav>
                     <nav className="content_pages">
-<<<<<<< HEAD
-                        <a href="/logusuarios" className="">Usuários</a>
-=======
                         <a href="/log" className="">Usuários</a>
->>>>>>> b82f873a04cb4be22398ddab73cecdef521f6457
                         <a href="/checkin" className="marcado_registros">Registros</a>
                         <a href="/home" className="">Home</a>
                     </nav>
