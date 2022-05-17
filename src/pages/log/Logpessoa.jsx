@@ -2,7 +2,7 @@ import fab_logo from "../../assets/fab-logo.png";
 import logo from "../../assets/logo.png";
 import { React, useState, useEffect } from 'react';
 
-export default function LogUsuario() {
+export default function Log() {
 
     return (
         <main className="cam_page_modal">
@@ -13,18 +13,18 @@ export default function LogUsuario() {
                         <img src={logo} alt="Logo do Sistema Severino" />
                     </nav>
                     <nav className="content_pages">
-                        <a href="" className="marcado_usuarios">Usuários</a>
-                        <a href="" className="">Registros</a>
-                        <a href="" className="">Home</a>
+                    <a href="/log" className="marcado_usuarios">Usuários</a>
+                        <a href="/checkin" className="">Registros</a>
+                        <a href="/home" className="">Home</a>
                     </nav>
                 </div>
             </header>
-            {/* <article className="cam_content">
+            <article className="cam_content">
                 <span>
-                <a href="#"><img src={adicionar} href="#" alt="Botão de adicionar" />Cadastrar Novo Usuário</a>
+                <a href="#"><img href="#" alt="Botão de adicionar" />Cadastrar Novo Usuário</a>
                 </span>
                 <table></table>
-            </article> */}
+            </article>
             
         </main >
     )

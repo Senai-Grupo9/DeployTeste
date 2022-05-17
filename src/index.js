@@ -6,7 +6,7 @@ import {parseJwt, usuarioAutenticado } from './services/auth';
 import reportWebVitals from './reportWebVitals';
 import Home from './pages/home/Home'
 import Login from './pages/login/Login'
-import LogUsuario from './pages/logusuario/LogUsuario';
+import Logpessoa from './pages/log/Logpessoa';
 import CheckIn from './pages/checkin/CheckIn';
 import erro from './pages/404/404'
 
@@ -27,6 +27,7 @@ const routing = (
   <Router>
     <div>
       <Switch>
+<<<<<<< HEAD
         <Route exact path="/" component={Login}/>
         <PrivateRoute path="/home" component={Home}/>
         <PrivateRoute path="/logusuario" component={LogUsuario}/>
@@ -35,6 +36,13 @@ const routing = (
         
         <Route path="/notfound" component={erro}/>
         <Redirect to ="/notfound"/>
+=======
+        <Route exact path="/home" component={Home}></Route>
+        <Route path="/erro" component={erro} />
+        <Route path="/log" component={Logpessoa}></Route>
+        <Route path="/checkin" component={CheckIn}></Route>
+        <Route path="/" component={Login}></Route>
+>>>>>>> b82f873a04cb4be22398ddab73cecdef521f6457
       </Switch>
     </div>
   </Router>
