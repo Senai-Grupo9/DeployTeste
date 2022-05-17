@@ -12,13 +12,19 @@ export default function CheckIn() {
                         <img src={logo} alt="Logo do Sistema Severino" />
                     </nav>
                     <nav className="content_pages">
-                        <a href="" className="">Usuários</a>
-                        <a href="" className="marcado_registros">Registros</a>
-                        <a href="" className="">Home</a>
+                        <a href="/log" className="">Usuários</a>
+                        <a href="/checkin" className="marcado_registros">Registros</a>
+                        <a href="/home" className="">Home</a>
                     </nav>
                 </div>
             </header>
-            {/* <article className="registro_content">
+            <section className="switchregistro">
+                <table className="containerswitchregistro">
+                    <th className="switchthright switchmarcado"><a href="">Objetos</a></th>
+                    <th className="switchth"><a href="">Pessoas</a></th>
+                </table>
+            </section>
+            <section className="registro_content">
                 <table className="table_registro">
                     <th>Pessoa</th>
                     <th>Entrada</th>
@@ -34,7 +40,7 @@ export default function CheckIn() {
                         <td>10:29 04/05/2022</td>
                     </tr>
                 </table>
-            </article> */}
+            </section>
         </main >
     )
 }

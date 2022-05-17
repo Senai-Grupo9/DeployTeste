@@ -41,15 +41,24 @@ export default function Home() {
     return (
         <main className="cam_page_modal">
             <header>
-                <div className="popovercontainer">
-                <img src={fab_logo} alt="logo da fab soluções" className="" />
-                <span className="popover">
-                FabSoluções<br/>
-                ID 509103<br/>
-                CheckIN 8:15<br/>
-                </span>
+                <div className="container_nav">
+                    <nav className="content_logo">
+                        <div className="popovercontainer">
+                            <img src={fab_logo} alt="logo da fab soluções" className="" />
+                            <span className="popover">
+                                FabSoluções<br />
+                                ID 509103<br />
+                                CheckIN 8:15<br />
+                            </span>
+                        </div>
+                        <img src={logo} alt="Logo do Sistema Severino" />
+                    </nav>
+                    <nav className="content_pages">
+                        <a href="/log" className="">Usuários</a>
+                        <a href="/checkin" className="">Registros</a>
+                        <a href="/home" className="marcado_home">Home</a>
+                    </nav>
                 </div>
-                <a href="../checkin"><img src={logo} alt="logo do severino" /></a>
             </header>
         </main >
     )

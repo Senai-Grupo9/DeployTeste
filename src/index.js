@@ -5,7 +5,7 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import Home from './pages/home/Home'
 import Login from './pages/login/Login'
-import LogUsuario from './pages/logusuario/LogUsuario';
+import Logpessoa from './pages/log/Logpessoa';
 import CheckIn from './pages/checkin/CheckIn';
 import erro from './pages/404/404'
 
@@ -16,7 +16,7 @@ const routing = (
       <Switch>
         <Route exact path="/home" component={Home}></Route>
         <Route path="/erro" component={erro}/>
-        <Route path="/logusuario" component={LogUsuario}></Route>
+        <Route path="/log" component={Logpessoa}></Route>
         <Route path="/checkin" component={CheckIn}></Route>
         <Route path="/" component={Login}></Route>
       </Switch>
