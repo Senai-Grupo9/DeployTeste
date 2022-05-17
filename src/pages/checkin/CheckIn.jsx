@@ -20,26 +20,97 @@ export default function CheckIn() {
             </header>
             <section className="switchregistro">
                 <table className="containerswitchregistro">
-                    <th className="switchthright switchmarcado"><a href="">Objetos</a></th>
-                    <th className="switchth"><a href="">Pessoas</a></th>
+                    <th className="switchth">Registros</th>
                 </table>
             </section>
             <section className="registro_content">
-                <table className="table_registro">
-                    <th>Pessoa</th>
-                    <th>Entrada</th>
-                    <th>Saída</th>
-                    <tr className="item_registro">
-                        <td>Thiago</td>
-                        <td>10:26 04/05/2022</td>
-                        <td>10:29 04/05/2022</td>
-                    </tr>
-                    <tr className="item_registros">
-                        <td>Odirlei</td>
-                        <td>10:26 04/05/2022</td>
-                        <td>10:29 04/05/2022</td>
-                    </tr>
-                </table>
+                <div className="container_table_registro">
+                    <table className="table_registro">
+                        <th className="thobjetos">Objeto</th>
+                        <th className="thobjetos thobjetos_centro">Entrada</th>
+                        <th className="thobjetos">Saída</th>
+                        <tr className="item_registro">
+                            <td className="tdobjetos">Cadeira</td>
+                            <td className="tdobjetos">10:26 04/05/2022</td>
+                            <td className="tdobjetos">10:29 04/05/2022</td>
+                        </tr>
+                        <tr className="item_registro">
+                            <td className="tdobjetos">Mesa</td>
+                            <td className="tdobjetos">10:26 04/05/2022</td>
+                            <td className="tdobjetos">10:29 04/05/2022</td>
+                        </tr>
+                        <tr className="item_registro">
+                            <td className="tdobjetos">Cadeira</td>
+                            <td className="tdobjetos">10:26 04/05/2022</td>
+                            <td className="tdobjetos">10:29 04/05/2022</td>
+                        </tr>
+                        <tr className="item_registro">
+                            <td className="tdobjetos">Mesa</td>
+                            <td className="tdobjetos">10:26 04/05/2022</td>
+                            <td className="tdobjetos">10:29 04/05/2022</td>
+                        </tr>
+                        <tr className="item_registro">
+                            <td className="tdobjetos">Cadeira</td>
+                            <td className="tdobjetos">10:26 04/05/2022</td>
+                            <td className="tdobjetos">10:29 04/05/2022</td>
+                        </tr>
+                        <tr className="item_registro">
+                            <td className="tdobjetos">Mesa</td>
+                            <td className="tdobjetos">10:26 04/05/2022</td>
+                            <td className="tdobjetos">10:29 04/05/2022</td>
+                        </tr>
+                        <tr className="item_registro">
+                            <td className="tdobjetos">Cadeira</td>
+                            <td className="tdobjetos">10:26 04/05/2022</td>
+                            <td className="tdobjetos">10:29 04/05/2022</td>
+                        </tr>
+                        <tr className="item_registro">
+                            <td className="tdobjetos">Mesa</td>
+                            <td className="tdobjetos">10:26 04/05/2022</td>
+                            <td className="tdobjetos">10:29 04/05/2022</td>
+                        </tr>
+                        <tr className="item_registro">
+                            <td className="tdobjetos">Cadeira</td>
+                            <td className="tdobjetos">10:26 04/05/2022</td>
+                            <td className="tdobjetos">10:29 04/05/2022</td>
+                        </tr>
+                        <tr className="item_registro">
+                            <td className="tdobjetos">Mesa</td>
+                            <td className="tdobjetos">10:26 04/05/2022</td>
+                            <td className="tdobjetos">10:29 04/05/2022</td>
+                        </tr>
+                        <tr className="item_registro">
+                            <td className="tdobjetos">Cadeira</td>
+                            <td className="tdobjetos">10:26 04/05/2022</td>
+                            <td className="tdobjetos">10:29 04/05/2022</td>
+                        </tr>
+                        <tr className="item_registro">
+                            <td className="tdobjetos">Mesa</td>
+                            <td className="tdobjetos">10:26 04/05/2022</td>
+                            <td className="tdobjetos">10:29 04/05/2022</td>
+                        </tr>
+                        <tr className="item_registro">
+                            <td className="tdobjetos">Cadeira</td>
+                            <td className="tdobjetos">10:26 04/05/2022</td>
+                            <td className="tdobjetos">10:29 04/05/2022</td>
+                        </tr>
+                        <tr className="item_registro">
+                            <td className="tdobjetos">Mesa</td>
+                            <td className="tdobjetos">10:26 04/05/2022</td>
+                            <td className="tdobjetos">10:29 04/05/2022</td>
+                        </tr>
+                        <tr className="item_registro">
+                            <td className="tdobjetos">Cadeira</td>
+                            <td className="tdobjetos">10:26 04/05/2022</td>
+                            <td className="tdobjetos">10:29 04/05/2022</td>
+                        </tr>
+                        <tr className="item_registro">
+                            <td className="tdobjetos">Mesa</td>
+                            <td className="tdobjetos">10:26 04/05/2022</td>
+                            <td className="tdobjetos">10:29 04/05/2022</td>
+                        </tr>
+                    </table>
+                </div>
             </section>
         </main >
     )
