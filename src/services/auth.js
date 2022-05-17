@@ -8,3 +8,5 @@ export const parseJwt = () => {
     // converte o valor de base64 para string e em seguida para JSON
     return JSON.parse( window.atob(base64) );
 };
+
+export const GetItem = () => localStorage.getItem('usuario-login');

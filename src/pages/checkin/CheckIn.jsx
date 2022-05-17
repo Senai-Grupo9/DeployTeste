@@ -1,8 +1,18 @@
 import fab_logo from "../../assets/fab-logo.png";
 import logo from "../../assets/logo.png";
 import { React, useState, useEffect } from 'react';
+import axios from "axios";
+import { db } from '../../services/api'
+
 
 export default function CheckIn() {
+
+    function buscarCheckins() {
+        db.get('/RegistroPessoas')
+        .then()
+    }
+
+
     return (
         <main className="cam_page_modal">
             <header>
@@ -12,9 +22,9 @@ export default function CheckIn() {
                         <img src={logo} alt="Logo do Sistema Severino" />
                     </nav>
                     <nav className="content_pages">
-                        <a href="" className="">Usuários</a>
-                        <a href="" className="marcado_registros">Registros</a>
-                        <a href="" className="">Home</a>
+                        <a href="/logusuarios" className="">Usuários</a>
+                        <a href="/checkin" className="marcado_registros">Registros</a>
+                        <a href="/home" className="">Home</a>
                     </nav>
                 </div>
             </header>

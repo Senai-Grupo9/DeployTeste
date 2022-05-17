@@ -190,7 +190,7 @@ main {
     height: 30px;
     color: #FFF;
     font-family: 'Open Sans', sans-serif;
-    margin: 30px auto 0 ;
+    margin: 30px auto 0;
 }
 
 .login_form .fotos_login {
@@ -228,11 +228,11 @@ main {
     visibility: hidden;
 }
 
-.popovercontainer{
+.popovercontainer {
     position: relative;
-  }
-  
-  .popovercontainer .popover {
+}
+
+.popovercontainer .popover {
     visibility: hidden;
     width: 120px;
     background-color: black;
@@ -245,13 +245,78 @@ main {
     bottom: 100%;
     left: 50%;
     margin-left: -60px;
-    
+
     /* Fade in tooltip - takes 1 second to go from 0% to 100% opac: */
     opacity: 0;
     transition: opacity 1s;
-  }
-  
-  .popovercontainer:hover .popover {
+}
+
+.popovercontainer:hover .popover {
     visibility: visible;
     opacity: 1;
-  }
+}
+
+.conteudo {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-left: 80px;
+    margin-top: 90px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    margin-top: 45px;
+}
+
+.titulo_erro {
+    font-family: 'Open Sans', sans-serif;
+    height: 40px;
+    margin-top: 50px;
+}
+
+.spans {
+    display: flex;
+    margin-top: 20px;
+    flex-direction: column;
+}
+
+.arrumatudo {
+    display: flex;
+    justify-content: space-between;
+    width: 940px;
+    margin-top: 60px;
+}
+
+.imagemerro {
+    width: 240px;
+    display: flex;
+}
+
+.imagem_erro {
+    display: flex;
+    margin-top: 180px;
+}
+
+.arrumatudo span {
+    font-family: 'Open Sans', sans-serif;
+    height: 22px;
+    font-weight: bold;
+}
+
+.arrumatudo h3 {
+    font-family: 'Open Sans', sans-serif;
+    height: 45px;
+    font-weight: bold;
+}
+
+.logopequeno {
+    width: 170px;
+    padding-left: 0%;
+}
+
+.divlogo{
+    margin-top: 50px;
+    margin-left: 50px;
+}
