@@ -255,7 +255,6 @@ main {
     opacity: 1;
 }
 
-<<<<<<< HEAD
 .conteudo {
     display: flex;
     align-items: flex-start;
@@ -319,7 +318,8 @@ main {
 .divlogo{
     margin-top: 50px;
     margin-left: 50px;
-=======
+}
+
 .content_logo {
     display: flex;
 }
@@ -396,5 +396,4 @@ main {
     width: 360px;
     text-align: center;
     font-weight: 500;
->>>>>>> b82f873a04cb4be22398ddab73cecdef521f6457
 }
