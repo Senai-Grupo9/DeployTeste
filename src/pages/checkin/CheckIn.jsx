@@ -11,7 +11,7 @@ export default function CheckIn() {
     const [listaCheckin, setListaCheckin] = useState([]);
 
     function buscarCheckins() {
-        db.get('/RegistroPessoas')
+        db.get('/RegistroObjetoes')
             .then(resposta => {
                 if (resposta.status === 200) {
                     setListaCheckin(resposta.data)
@@ -61,23 +61,15 @@ export default function CheckIn() {
                             {
                                 listaCheckin.map((meucheckin) => {
                                     return (
-                                        <tr key={meucheckin.idRegistroPessoa}>
-                                            <td className="tdobjetos">{meucheckin.idPessoa}</td>
+                                        <tr key={meucheckin.idRegistroObj}>
+                                            <td className="tdobjetos">{meucheckin.idTipoObjNavigation.nome}</td>
                                             <td className="tdobjetos">{meucheckin.checkIn}</td>
-                                            <td className="tdobjetos">10:29 04/05/2022</td>
+                                            <td className="tdobjetos">{meucheckin.checkOut}</td>
                                         </tr>
                                     )
                                 })
                             }
                         </tbody>
-                        {/* <th className="thobjetos">Objeto</th>
-                        <th className="thobjetos thobjetos_centro">Entrada</th>
-                        <th className="thobjetos">Saída</th>
-                        <tr className="item_registro">
-                            <td className="tdobjetos">Cadeira</td>
-                            <td className="tdobjetos">10:26 04/05/2022</td>
-                            <td className="tdobjetos">10:29 04/05/2022</td>
-                        </tr> */}
                     </table>
                 </div>
             </section>

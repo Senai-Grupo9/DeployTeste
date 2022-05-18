@@ -397,3 +397,31 @@ main {
     text-align: center;
     font-weight: 500;
 }
+
+.botaoFoto{
+    width: 26px;
+}
+
+.botaocadastro{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: solid 1px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 17px;
+    background-color: transparent;
+    width: 230px;
+    margin-bottom: 20px;
+    margin-top: 35px;
+}
+
+.divmae{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.botaolixo{
+    width: 26px;
+    background: transparent;
+}
