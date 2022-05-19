@@ -315,7 +315,7 @@ main {
     padding-left: 0%;
 }
 
-.divlogo{
+.divlogo {
     margin-top: 50px;
     margin-left: 50px;
 }
@@ -370,7 +370,7 @@ main {
     overflow-x: hidden;
 }
 
-.table_registro th{
+.table_registro th {
     width: 360px;
     color: #90949D;
 }
@@ -398,11 +398,11 @@ main {
     font-weight: 500;
 }
 
-.botaoFoto{
+.botaoFoto {
     width: 26px;
 }
 
-.botaocadastro{
+.botaocadastro {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -415,13 +415,100 @@ main {
     margin-top: 35px;
 }
 
-.divmae{
+.divmae {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.botaolixo{
+.botaolixo {
     width: 26px;
     background: transparent;
+}
+
+.ocupatudo {
+    background-color: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.oform {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 50%;
+    justify-content: center;
+    margin: 150px auto 0 auto;
+    padding: 20px;
+    align-items: center;
+    border-radius: 20px;
+}
+
+.inputebotao {
+    margin-left: 20px;
+}
+
+.titulos h2,
+h4 {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.inputform {
+    width: 300px;
+    border-radius: 10px;
+    height: 30px;
+    border: 1px solid #D3D4D8;
+    padding-left: 10px;
+}
+
+.titulos {
+    left: 0;
+    margin: 10px 0 0 0;
+    width: 500px;
+}
+
+.oform span {
+    margin-top: 10px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.logodosev {
+    width: 103px;
+}
+
+.logodafab {
+    width: 162px;
+}
+
+.navfoto {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.navfoto img {
+    margin: 0 20px;
+    height: 75px;
+    width: auto;
+}
+
+.inputbotao {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.inputsreais {
+    display: flex;
+    flex-direction: column;
+}
+
+.fotinhas {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 200px;
 }
