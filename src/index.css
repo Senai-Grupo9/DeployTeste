@@ -67,7 +67,7 @@ main {
     text-decoration: underline;
 }
 
-.cam_page_modal img {
+.cam_page_modal header img {
     height: 100%;
     margin: 0;
 }
@@ -511,4 +511,34 @@ h4 {
     align-items: center;
     justify-content: space-between;
     width: 200px;
+}
+
+.botaocad{
+    border-radius: 10px;
+    background-color: #B6AF03;
+    width: 150px;
+    height: 30px;
+    margin-top: 20px;
+}
+
+.divbtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.coisadoxis{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.xizinho{
+    width: 20px;
+    height: 20px;
+    margin-left: 70px;
+}
+
+.btnfecha{
+    background-color: transparent;
 }

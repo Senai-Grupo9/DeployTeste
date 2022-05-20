@@ -1,5 +1,6 @@
 import fab_logo from "../../assets/fab-logo.png";
 import logo from "../../assets/logo.png";
+import xis from "../../assets/x-1.png";
 import addButton from "../../assets/adicionar.png";
 import excluirbtn from "../../assets/lixeira.png";
 import { React, useState, useEffect, Component } from 'react';
@@ -13,7 +14,6 @@ export default function Log() {
     }
 
     const [listaUser, setListaUser] = useState([]);
-    const [IdUser, setIdUser] = useState(0);
     const [isLoading, setIsLoading] = useState(false);
     const [showModal, setShowModal] = useState(false);
     const [email, setEmail] = useState('');
@@ -25,17 +25,16 @@ export default function Log() {
         setIsLoading(true);
 
         let usuarioC = {
-            IdUser: setIdUser,
-            email: setEmail,
-            senha: setSenha
+            idUser: 0,
+            email: email,
+            senha: senha
         };
 
-        db.post('/Usuarios', {
+        db.post('/Usuarios', usuarioC, {
             headers: {
                 'Authorization': 'Bearer ' + localStorage.getItem('usuario-login')
             },
         })
-
             .then((resposta) => {
                 if (resposta.status === 201) {
                     console.log('usuario cadastrado')
@@ -43,29 +42,14 @@ export default function Log() {
 
                 }
             })
-
             .catch((erro) => {
                 console.log(erro)
                 setIsLoading(false)
-
             })
-            .then(this.buscarCheckins)
-        //         .then(resposta => {
-        //             if (resposta === 201) {
-        //                 buscarCheckins();
-        //                 setIdUser('');
-        //                 setIsLoading(false)
-        //             }
-        //         })
-        //         .catch(erro => console.log(erro), setInterval(() => {
-        //             setIsLoading(false)
-        //         }, 5000))
-        // }
-    }
+            .then(buscarCheckins)
 
-    function atualizaStateCampo(campo) {
-        this.setState({ [campo.target.name]: campo.target.value })
-    };
+        setShowModal(false);
+    }
 
     function excluir(id, e) {
         db.delete('/Usuarios/' + id, {
@@ -83,9 +67,7 @@ export default function Log() {
                 }
             })
             .catch(erro => console.log(erro))
-
-        buscarCheckins();
-        carregarCheckIn();
+            .then(buscarCheckins)
     }
 
     function AbreModal() {
@@ -98,6 +80,7 @@ export default function Log() {
     function fechaModal() {
         setShowModal(false);
     }
+
 
     function carregarCheckIn() {
         return (
@@ -126,6 +109,7 @@ export default function Log() {
     };
 
 
+
     useEffect(buscarCheckins, []);
 
     function modal() {
@@ -135,12 +119,20 @@ export default function Log() {
                 <div className="ocupatudo">
 
                     <form className="oform"
-                    // onSubmit={this.Cadastrar}
                     >
-                        <div className="titulos">
-                            <h2>Novo Usuário</h2>
-                            <h4>Cadastre um novo usuário no sistema.</h4>
+                        <div className="coisadoxis">
+
+                            <div className="titulos">
+                                <h2>Novo Usuário</h2>
+                                <h4>Cadastre um novo usuário no sistema.</h4>
+                            </div>
+                            <div className="oxis">
+                                <button className="btnfecha" onClick={fechaModal}>
+                                    <img className="xizinho" src={xis} alt="xis"></img>
+                                </button>
+                            </div>
                         </div>
+
 
                         <div className="inputebotao">
 
@@ -153,7 +145,7 @@ export default function Log() {
                                     type="text"
                                     name="email"
                                     value={email}
-                                    onChange={atualizaStateCampo}
+                                    onChange={e => setEmail(e.target.value)}
                                     placeholder="Insira o email que será cadastrado"
                                 />
                             </div>
@@ -167,7 +159,7 @@ export default function Log() {
                                     type="password"
                                     name="senha"
                                     value={senha}
-                                    onChange={atualizaStateCampo}
+                                    onChange={e => setSenha(e.target.value)}
                                     placeholder="Insira a senha que será cadastrada"
                                 />
                             </div>
@@ -181,17 +173,20 @@ export default function Log() {
                                     type="password"
                                     name="confSenha"
                                     value={confSenha}
-                                    onChange={atualizaStateCampo}
+                                    onChange={e => setconfSenha(e.target.value)}
                                     placeholder="Confirme a senha"
                                 />
                             </div>
 
-                            <button className="botaocad" type="submit" onClick={Cadastrar}>Cadastrar</button>
+                            <div className="divbtn">
+
+                                <button className="botaocad" type="submit" onClick={Cadastrar}>Cadastrar</button>
+                            </div>
                         </div>
 
                         <nav className="navfoto">
-                            <img className="logodosev" src={logo} alt="Logo do Sistema Severino" />
                             <img className="logodafab" src={fab_logo} alt="Logo da FabSoluções" />
+                            <img className="logodosev" src={logo} alt="Logo do Sistema Severino" />
                         </nav>
                     </form>
                 </div>
