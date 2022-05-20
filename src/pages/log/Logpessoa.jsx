@@ -9,10 +9,6 @@ import axios from "axios";
 
 
 export default function Log() {
-    var state = {
-        users: []
-    }
-
     const [listaUser, setListaUser] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [showModal, setShowModal] = useState(false);
