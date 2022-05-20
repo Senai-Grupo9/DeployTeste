@@ -40,6 +40,8 @@
     ]
   },
   "devDependencies": {
-    "node-sass": "^7.0.1"
+    "@types/video.js": "^7.3.40",
+    "node-sass": "^7.0.1",
+    "video.js": "^7.18.1"
   }
 }

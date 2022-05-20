@@ -28,7 +28,7 @@ const routing = (
     <div>
       <Switch>
         <Route exact path="/" component={Login}/>
-        <PrivateRoute path="/home" component={Home}/>
+        <Route path="/home" component={Home}/>
         <PrivateRoute path="/log" component={Logpessoa}/>
         <PrivateRoute path="/checkin" component={CheckIn}/>
   
