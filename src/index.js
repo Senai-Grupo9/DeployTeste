@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Route, BrowserRouter as Router, Redirect, Switch } from 'react-router-dom';
 import './index.css';
-import {parseJwt, usuarioAutenticado } from './services/auth';
+import { usuarioAutenticado } from './services/auth';
 import reportWebVitals from './reportWebVitals';
 import Home from './pages/home/Home'
 import Login from './pages/login/Login'
