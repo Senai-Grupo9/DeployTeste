@@ -125,6 +125,23 @@ main {
     align-items: center;
 }
 
+.cam_page_modal .camera {
+    background-color: #000;
+    width: 70%;
+    height: 100%;
+}
+
+.cam_page_modal .video-js {
+    width: 100%;
+    height: 100%;
+}
+
+.cam_page_modal .camera .detected{
+    border: 5px solid green;
+    width: 70%;
+    height: 100%;
+}
+
 .login_modal {
     width: 65vw;
     height: 80vh;
