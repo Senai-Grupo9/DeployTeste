@@ -26,25 +26,28 @@ export default function Log() {
             senha: senha
         };
 
-        db.post('/Usuarios', usuarioC, {
-            headers: {
-                'Authorization': 'Bearer ' + localStorage.getItem('usuario-login')
-            },
-        })
-            .then((resposta) => {
-                if (resposta.status === 201) {
-                    console.log('usuario cadastrado')
+
+        if (usuarioC.senha === confSenha) {
+
+            db.post('/Usuarios', usuarioC, {
+                headers: {
+                    'Authorization': 'Bearer ' + localStorage.getItem('usuario-login')
+                },
+            })
+                .then((resposta) => {
+                    if (resposta.status === 201) {
+                        console.log('usuario cadastrado')
+                        setIsLoading(false)
+
+                    }
+                })
+                .catch((erro) => {
+                    console.log(erro)
                     setIsLoading(false)
-
-                }
-            })
-            .catch((erro) => {
-                console.log(erro)
-                setIsLoading(false)
-            })
-            .then(buscarCheckins)
-
-        setShowModal(false);
+                })
+                .then(buscarCheckins)
+            }
+            setShowModal(false);
     }
 
     function excluir(id, e) {

@@ -16,18 +16,18 @@ export default function Home() {
 
 
     function getObjects() {
-        mock.get('/object')
+        db.get('/RegistroObjetoes')
             .then(resposta => {
                 if (resposta.status === 200) {
                     setList(resposta.data)
                 };
             })
             .catch(erro => console.log(erro));
-        console.log('peguei objeto')
+        console.log(list)
     }
 
     function getDetectedObjects() {
-        db.get('/Camera/CameraAnalyse')
+        db.get('/Camera/ImageAnalyse')
             .then(resposta => {
                 console.log(resposta);
                 if (resposta.status === 200) {
@@ -48,8 +48,8 @@ export default function Home() {
 
         return (
             list.map(o =>
-                r.test(o.name.toLowerCase()) ?
-                    <div className="object">{o.name}</div>
+                r.test(o.idTipoObjNavigation.nome.toLowerCase()) ?
+                    <div className="object">{o.idTipoObjNavigation.nome}</div>
                     : null
             )
         )
