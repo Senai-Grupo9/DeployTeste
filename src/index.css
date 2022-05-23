@@ -197,6 +197,7 @@ main {
     margin-left: auto;
     background-color: transparent;
     margin-top: 5px;
+    cursor: pointer;
 }
 
 .login_form .Do-Login {
@@ -208,6 +209,10 @@ main {
     color: #FFF;
     font-family: 'Open Sans', sans-serif;
     margin: 30px auto 0;
+}
+
+:hover.Do-Login {
+    cursor: pointer;
 }
 
 .login_form .fotos_login {
@@ -430,6 +435,7 @@ main {
     width: 230px;
     margin-bottom: 20px;
     margin-top: 35px;
+    cursor: pointer;
 }
 
 .divmae {
@@ -538,6 +544,7 @@ h4 {
     margin-top: 20px;
     color: white;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .divbtn{
