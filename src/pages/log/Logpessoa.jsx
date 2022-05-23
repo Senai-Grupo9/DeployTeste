@@ -12,6 +12,7 @@ export default function Log() {
     const [listaUser, setListaUser] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [showModal, setShowModal] = useState(false);
+    const [erroMensagem, setErroMensagem] = useState('');
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
     const [confSenha, setconfSenha] = useState('');
@@ -45,9 +46,14 @@ export default function Log() {
                     console.log(erro)
                     setIsLoading(false)
                 })
-                .then(buscarCheckins)
+                .then(
+                    buscarCheckins,
+                    setShowModal(false),
+                    setErroMensagem('')
+                    )
+            } else {
+                setErroMensagem('Confira sua senha e tente novamente')
             }
-            setShowModal(false);
     }
 
     function excluir(id, e) {
@@ -71,6 +77,7 @@ export default function Log() {
 
     function AbreModal() {
         setShowModal(true);
+        setErroMensagem('');
         setEmail('');
         setSenha('');
         setconfSenha('');
@@ -136,7 +143,7 @@ export default function Log() {
                         <div className="inputebotao">
 
                             <div className="inputsreais">
-
+                                <span>{erroMensagem}</span>
                                 <span>Email</span>
                                 <input
                                     required
