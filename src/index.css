@@ -248,6 +248,10 @@ main {
     /* display: none; */
 }
 
+#invalidlogin {
+    color: red;
+}
+
 .popovercontainer {
     position: relative;
 }
@@ -446,6 +450,7 @@ main {
 .botaolixo {
     width: 26px;
     background: transparent;
+    cursor: pointer;
 }
 
 .ocupatudo {
@@ -562,6 +567,7 @@ h4 {
     width: 20px;
     height: 20px;
     margin-left: 70px;
+    cursor: pointer;
 }
 
 .btnfecha{
