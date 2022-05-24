@@ -12,11 +12,11 @@ export default function Home() {
     const [list, setList] = useState([]);
     const [search, setSearch] = useState('');
     const [detectedObjects, setDetectedObjects] = useState([]);
+    const [snapshot, SetSnapshot] = useState([]);
     // const camElement = useRef(null);
 
-
     function getObjects() {
-        db.get('/RegistroObjetoes')
+        db.get('/RegistroObjetoes/Now')
             .then(resposta => {
                 if (resposta.status === 200) {
                     setList(resposta.data)
@@ -27,20 +27,18 @@ export default function Home() {
     }
 
     function getDetectedObjects() {
-        db.get('/Camera/ImageAnalyse')
+        db.post('/Camera/MakeRegisters/Camera')
             .then(resposta => {
                 console.log(resposta);
                 if (resposta.status === 200) {
-                    setDetectedObjects(resposta.data);
+                    // setDetectedObjects(resposta.data);
+                    console.log("funfou!!")
                 };
             })
-            .catch(erro => console.log('não funcionou...'));
-        
-        console.log(detectedObjects);
+            .catch(erro => console.log('não funfou'));
     }
 
     useEffect(getObjects, []);
-
     useEffect(getDetectedObjects, []);
 
     function toList() {
@@ -78,7 +76,7 @@ export default function Home() {
     return (
         <main className="cam_page_modal">
             <header>
-            <div className="container_nav">
+                <div className="container_nav">
                     <nav className="content_logo">
                         <div className="popovercontainer">
                             <img src={fab_logo} alt="logo da fab soluções" className="" />
@@ -97,6 +95,8 @@ export default function Home() {
                     </nav>
                 </div>
             </header>
+            
+            
             <div className="cam_content">
                 <section className="search">
                     <input type="text" placeholder="O que você procura...?" onChange={onChange} />
@@ -108,7 +108,7 @@ export default function Home() {
                 </section>
 
                 <section className="camera"
-                    // ref={(camElement) => { this.camElement = camElement }}
+                // ref={(camElement) => { this.camElement = camElement }}
                 >
                     <VideoFeed src="http://localhost:8083/stream/pattern/channel/0/hls/live/index.m3u8" />
 

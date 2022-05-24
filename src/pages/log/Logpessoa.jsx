@@ -143,7 +143,7 @@ export default function Log() {
                         <div className="inputebotao">
 
                             <div className="inputsreais">
-                                <span>{erroMensagem}</span>
+                                <span className="spandeerro">{erroMensagem}</span>
                                 <span>Email</span>
                                 <input
                                     required

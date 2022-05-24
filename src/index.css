@@ -573,3 +573,9 @@ h4 {
 .btnfecha{
     background-color: transparent;
 }
+
+.spandeerro{
+    display: flex;
+    justify-content: center;
+    color: red;
+}
