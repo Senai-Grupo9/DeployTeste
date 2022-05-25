@@ -28,10 +28,7 @@ const routing = (
     <div>
       <Switch>
         <Route exact path="/" component={Login}/>
-        <Route path="/home" component={Home}/>
-        <PrivateRoute path="/log" component={Logpessoa}/>
-        <PrivateRoute path="/checkin" component={CheckIn}/>
-  
+        <Route path="/home" component={Home}/>  
         <Route path="/notfound" component={erro}/>
         <Redirect to ="/notfound"/>
       </Switch>

@@ -63,7 +63,7 @@ export default function CheckIn() {
                                     return (
                                         <tr key={meucheckin.idRegistroObj}>
                                             <td className="tdobjetos">{meucheckin.idTipoObjNavigation.nome}</td>
-                                            <td className="tdobjetos">{meucheckin.checkIn}</td>
+                                            <td className="tdobjetos">{new Date(meucheckin.CheckIn).toLocaleDateString('en-US')}</td>
                                             <td className="tdobjetos">{meucheckin.checkOut}</td>
                                         </tr>
                                     )
