@@ -323,12 +323,17 @@ export default function Home() {
                             <tbody>
                                 {
                                     listaCheckin.map((meucheckin) => {
-                                        let date = dataAtualFormatada(meucheckin.checkIn);
+                                        let dateIn = dataAtualFormatada(meucheckin.checkIn);
+                                        let dateOut = dataAtualFormatada(meucheckin.checkOut);
                                         return (
                                             <tr key={meucheckin.idRegistroObj}>
                                                 <td className="tdobjetos">{meucheckin.idTipoObjNavigation.nome}</td>
-                                                <td className="tdobjetos">{date}</td>
-                                                <td className="tdobjetos">{meucheckin.checkOut}</td>
+                                                <td className="tdobjetos">{dateIn}</td>{ }
+                                                {
+                                                    (meucheckin.checkOut != null) ?
+                                                        <td className="tdobjetos">{dateOut}</td>
+                                                        : <td className="tdobjetos"></td>
+                                                }
                                             </tr>
                                         )
                                     })
@@ -401,7 +406,7 @@ export default function Home() {
     }
 
     function changeScreen(event) {
-        
+
         set1(false)
         set2(false)
         set3(false)
@@ -412,22 +417,22 @@ export default function Home() {
             case 1:
                 set1(true);
                 break;
-            
+
             case 2:
                 set2(true);
                 break;
-            
+
             case 3:
                 set3(true);
                 break;
-        
+
             default:
                 break;
         }
 
         setValor(num)
-        
-    } 
+
+    }
 
     function dataAtualFormatada(texto) {
         let data = new Date(texto);
@@ -440,7 +445,7 @@ export default function Home() {
         var segundos = data.getSeconds()
         let novoDia = `${dia}/${mes}/${ano} ${hora}:${minutos}:${segundos}`
         return novoDia;
-    } 
+    }
 
     var btn_1 = css1 ? "marcado" : "";
     var btn_2 = css2 ? "marcado" : "";
