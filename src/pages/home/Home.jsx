@@ -65,11 +65,12 @@ export default function Home() {
                 <section className="camera"
                 // ref={(camElement) => { this.camElement = camElement }}
                 >
-                    <VideoFeed src="http://localhost:8083/stream/pattern/channel/0/hls/live/index.m3u8" />
+                    {/* <VideoFeed src="http://localhost:8083/stream/pattern/channel/0/hls/live/index.m3u8" />
 
                     {
                         //toListDetectedObject()
-                    }
+                    } */}
+                    <iframe autoplay width="100%" height="100%" src="https://rtsp.me/embed/3TNKTEtE/" frameborder="0" allowfullscreen></iframe>
                 </section>
             </div>
         )
