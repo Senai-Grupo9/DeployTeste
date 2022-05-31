@@ -26,61 +26,132 @@ export default function Home() {
     const [snapshot, SetSnapshot] = useState([]);
     const [valor, setValor] = useState(0);
     const [listaCheckin, setListaCheckin] = useState([]);
-
+    
     const [css1, set1] = useState(true);
     const [css2, set2] = useState(false);
     const [css3, set3] = useState(false);
     // const camElement = useRef(null);
-
-    function buscarCheckins() {
-        db.get('/RegistroObjetoes')
-            .then(resposta => {
-                if (resposta.status === 200) {
-                    setListaCheckin(resposta.data)
-                }
-            })
-            .catch(erro => console.log(erro));
-    };
-
-    useEffect(buscarCheckins, []);
-
-    function Cadastrar(event) {
-        event.preventDefault();
-        setIsLoading(true);
-
-        let usuarioC = {
-            idUser: 0,
-            email: email,
-            senha: senha
-        };
-
-
-        if (usuarioC.senha === confSenha) {
-
-            db.post('/Usuarios', usuarioC, {
-                headers: {
-                    'Authorization': 'Bearer ' + localStorage.getItem('usuario-login')
-                },
-            })
-                .then((resposta) => {
-                    if (resposta.status === 201) {
-                        console.log('usuario cadastrado')
-                        setIsLoading(false)
-
-                    }
-                })
-                .catch((erro) => {
-                    console.log(erro)
-                    setIsLoading(false)
-                })
-                .then(
-                    buscarCheckins,
-                    setShowModal(false),
-                    setErroMensagem('')
-                )
-        } else {
-            setErroMensagem('Confira sua senha e tente novamente')
+    
+    function comparaswitch() {
+        switch (valor) {
+            case 1:
+                return (mostratelaCamera())
+                break;
+            case 2:
+                return (mostratelaUsuarios())
+                break;
+    
+            case 3:
+                return (mostratelaRegistros())
+                break;
+            default:
+                setValor(1)
+                break;
         }
+    }
+    
+    function mostratelaCamera() {
+        return (
+            <div className="cam_content">
+                <section className="search">
+                    <input type="text" placeholder="O que você procura...?" onChange={onChange} />
+                    <div className="list">
+                        {
+                            toList()
+                        }
+                    </div>
+                </section>
+    
+                <section className="camera"
+                // ref={(camElement) => { this.camElement = camElement }}
+                >
+                    <VideoFeed src="http://localhost:8083/stream/pattern/channel/0/hls/live/index.m3u8" />
+    
+                    {
+                        //toListDetectedObject()
+                    }
+                </section>
+            </div>
+        )
+    }
+    
+    function mostratelaUsuarios() {
+        return (
+            <div className="divmae">
+                <button onClick={AbreModal} className="botaocadastro" type="submit"><img className="botaoFoto" src={addButton}></img>Cadastrar Novo Usuário</button>
+    
+                <section>
+                    <div className="container_table_registro">
+                        <table className="table_registro">
+    
+                            <thead>
+                                <tr>
+                                    <th className="thobjetos">Id</th>
+                                    <th className="thobjetos thobjetos_centro">E-mail</th>
+                                    <th className="thobjetos">Excluir</th>
+                                </tr>
+                            </thead>
+    
+                            <tbody>
+                                {
+                                    carregarUser()
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+                {
+                    modal()
+                }
+            </div>
+        )
+    }
+    
+    function mostratelaRegistros() {
+        return (
+            <div>
+                <section className="switchregistro">
+                    <table className="containerswitchregistro">
+                        <th className="switchth">Registros</th>
+                    </table>
+                </section>
+    
+                <section className="registro_content">
+                    <div className="container_table_registro">
+                        <table className="table_registro">
+    
+                            <thead>
+                                <tr>
+                                    <th className="thobjetos">Objeto</th>
+                                    <th className="thobjetos thobjetos_centro">Entrada</th>
+                                    <th className="thobjetos">Saída</th>
+                                </tr>
+                            </thead>
+    
+                            <tbody>
+                                {
+                                    listaCheckin.map((meucheckin) => {
+                                        let dateIn = dataAtualFormatada(meucheckin.checkIn);
+                                        let dateOut = dataAtualFormatada(meucheckin.checkOut);
+                                        return (
+                                            <tr key={meucheckin.idRegistroObj}>
+                                                <td className="tdobjetos">{meucheckin.idTipoObjNavigation.nome}</td>
+                                                <td className="tdobjetos">{dateIn}</td>{ }
+                                                {
+                                                    (meucheckin.checkOut != null) ?
+                                                        <td className="tdobjetos">{dateOut}</td>
+                                                        : <td className="tdobjetos"></td>
+                                                }
+                                            </tr>
+                                        )
+                                    })
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+        )
     }
 
     function excluir(id, e) {
@@ -102,34 +173,6 @@ export default function Home() {
             .then(buscarCheckins)
     }
 
-    function AbreModal() {
-        setShowModal(true);
-        setErroMensagem('');
-        setEmail('');
-        setSenha('');
-        setconfSenha('');
-    }
-
-    function fechaModal() {
-        setShowModal(false);
-    }
-
-    function carregarUser() {
-        return (
-            listaUser.map((user) => {
-                return (
-                    <tr key={user.idUser}>
-                        <td className="tdobjetos">{user.idUser}</td>
-                        <td className="tdobjetos">{user.email}</td>
-                        <td className="tdobjetos">
-                            <button onClick={(e) => excluir(user.idUser, e)} className="botaolixo"><img className="botaolixo" src={excluirbtn}></img></button>
-                        </td>
-                    </tr>
-                )
-            })
-        )
-    }
-
     function buscarUsuarios() {
         db.get('/Usuarios')
             .then(resposta => {
@@ -141,6 +184,18 @@ export default function Home() {
     };
 
     useEffect(buscarUsuarios, []);
+
+    function buscarCheckins() {
+        db.get('/RegistroObjetoes')
+            .then(resposta => {
+                if (resposta.status === 200) {
+                    setListaCheckin(resposta.data)
+                }
+            })
+            .catch(erro => console.log(erro));
+    };
+
+    useEffect(buscarCheckins, []);
 
     function modal() {
 
@@ -224,125 +279,70 @@ export default function Home() {
         }
     }
 
-    function comparaswitch() {
-        switch (valor) {
-            case 1:
-                return (mostratelaCamera())
-                break;
-            case 2:
-                return (mostratelaUsuarios())
-                break;
+    function AbreModal() {
+        setShowModal(true);
+        setErroMensagem('');
+        setEmail('');
+        setSenha('');
+        setconfSenha('');
+    }
 
-            case 3:
-                return (mostratelaRegistros())
-                break;
-            default:
-                setValor(1)
-                break;
+    function fechaModal() {
+        setShowModal(false);
+    }
+
+    function Cadastrar(event) {
+        event.preventDefault();
+        setIsLoading(true);
+
+        let usuarioC = {
+            idUser: 0,
+            email: email,
+            senha: senha
+        };
+
+
+        if (usuarioC.senha === confSenha) {
+
+            db.post('/Usuarios', usuarioC, {
+                headers: {
+                    'Authorization': 'Bearer ' + localStorage.getItem('usuario-login')
+                },
+            })
+                .then((resposta) => {
+                    if (resposta.status === 201) {
+                        console.log('usuario cadastrado')
+                        setIsLoading(false)
+
+                    }
+                })
+                .catch((erro) => {
+                    console.log(erro)
+                    setIsLoading(false)
+                })
+                .then(
+                    mostratelaUsuarios,
+                    setShowModal(false),
+                    setErroMensagem('')
+                )
+        } else {
+            setErroMensagem('Confira sua senha e tente novamente')
         }
     }
 
-    function mostratelaCamera() {
+    function carregarUser() {
         return (
-            <div className="cam_content">
-                <section className="search">
-                    <input type="text" placeholder="O que você procura...?" onChange={onChange} />
-                    <div className="list">
-                        {
-                            toList()
-                        }
-                    </div>
-                </section>
-
-                <section className="camera"
-                // ref={(camElement) => { this.camElement = camElement }}
-                >
-                    <VideoFeed src="http://localhost:8083/stream/pattern/channel/0/hls/live/index.m3u8" />
-
-                    {
-                        //toListDetectedObject()
-                    }
-                </section>
-            </div>
-        )
-    }
-
-    function mostratelaUsuarios() {
-        return (
-            <div className="divmae">
-                <button onClick={AbreModal} className="botaocadastro" type="submit"><img className="botaoFoto" src={addButton}></img>Cadastrar Novo Usuário</button>
-
-                <section>
-                    <div className="container_table_registro">
-                        <table className="table_registro">
-
-                            <thead>
-                                <tr>
-                                    <th className="thobjetos">Id</th>
-                                    <th className="thobjetos thobjetos_centro">E-mail</th>
-                                    <th className="thobjetos">Excluir</th>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-                                {
-                                    carregarUser()
-                                }
-                            </tbody>
-                        </table>
-                    </div>
-                </section>
-                {
-                    modal()
-                }
-            </div>
-        )
-    }
-
-    function mostratelaRegistros() {
-        return (
-            <div>
-                <section className="switchregistro">
-                    <table className="containerswitchregistro">
-                        <th className="switchth">Registros</th>
-                    </table>
-                </section>
-
-                <section className="registro_content">
-                    <div className="container_table_registro">
-                        <table className="table_registro">
-
-                            <thead>
-                                <tr>
-                                    <th className="thobjetos">Objeto</th>
-                                    <th className="thobjetos thobjetos_centro">Entrada</th>
-                                    <th className="thobjetos">Saída</th>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-                                {
-                                    listaCheckin.map((meucheckin) => {
-                                        let dateIn = dataAtualFormatada(meucheckin.checkIn);
-                                        let dateOut = dataAtualFormatada(meucheckin.checkOut);
-                                        return (
-                                            <tr key={meucheckin.idRegistroObj}>
-                                                <td className="tdobjetos">{meucheckin.idTipoObjNavigation.nome}</td>
-                                                <td className="tdobjetos">{dateIn}</td>{ }
-                                                {
-                                                    (meucheckin.checkOut != null) ?
-                                                        <td className="tdobjetos">{dateOut}</td>
-                                                        : <td className="tdobjetos"></td>
-                                                }
-                                            </tr>
-                                        )
-                                    })
-                                }
-                            </tbody>
-                        </table>
-                    </div>
-                </section>
-            </div>
+            listaUser.map((user) => {
+                return (
+                    <tr key={user.idUser}>
+                        <td className="tdobjetos">{user.idUser}</td>
+                        <td className="tdobjetos">{user.email}</td>
+                        <td className="tdobjetos">
+                            <button onClick={(e) => excluir(user.idUser, e)} className="botaolixo"><img className="botaolixo" src={excluirbtn}></img></button>
+                        </td>
+                    </tr>
+                )
+            })
         )
     }
 
