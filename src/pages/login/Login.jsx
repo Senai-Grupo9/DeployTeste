@@ -17,7 +17,7 @@ export default class Login extends Component {
             erroMensagem: '',
             isLoading: false,
         };
-    };
+    }
 
     efetuaLogin = (event) => {
         event.preventDefault();
@@ -42,8 +42,17 @@ export default class Login extends Component {
                 }
             })
             .catch(() => {
-                this.setState({ erroMensagem: 'E-mail e/ou senha inválidos!', isLoading: false })
-            })
+                this.setState({ isLoading: false });
+                this.setState(
+                    {
+                        erroMensagem: "Login ou Senha inválidos!",
+                        isLoading: false,
+                        // email: '',
+                        // senha: ''
+                    },
+                    console.log("deu errado")
+                );
+            });
     };
 
     atualizaStateCampo = (campo) => {
@@ -60,7 +69,7 @@ export default class Login extends Component {
                     <div className="item">
                         <div className="labels">
                             <label>Email</label>
-                            <label className="invalidlogin">Login ou Senha inválidos!</label>
+                            <label id="invalidlogin">{this.state.erroMensagem}</label>
                         </div>
                         <input
                             className="input__login"
@@ -91,7 +100,7 @@ export default class Login extends Component {
                         <img src={FabLogo} className="foto_logo_fab" alt="Logo da Fab Soluções"></img>
                     </div>
                 </form>
-                    <img src={imagemLogin} className="fotoLogin" alt=""></img>
+                <img src={imagemLogin} className="fotoLogin" alt=""></img>
             </main>
         );
     }

@@ -48,23 +48,15 @@ main {
     align-items: center;
 }
 
-.content_pages a {
+#marcado {
+    text-decoration: underline;
+}
+
+.content_pages button {
     font-size: 24px;
-    color: #90949D;
+    background-color: unset;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     padding: 0px 50px;
-}
-
-.marcado_usuarios {
-    text-decoration: underline;
-}
-
-.marcado_registros {
-    text-decoration: underline;
-}
-
-.marcado_home {
-    text-decoration: underline;
 }
 
 .cam_page_modal header img {
@@ -80,6 +72,7 @@ main {
 .cam_page_modal .registro_content {
     display: flex;
     justify-content: center;
+    height: 75%;
 }
 
 .cam_page_modal .search {
@@ -197,6 +190,7 @@ main {
     margin-left: auto;
     background-color: transparent;
     margin-top: 5px;
+    cursor: pointer;
 }
 
 .login_form .Do-Login {
@@ -208,6 +202,10 @@ main {
     color: #FFF;
     font-family: 'Open Sans', sans-serif;
     margin: 30px auto 0;
+}
+
+:hover.Do-Login {
+    cursor: pointer;
 }
 
 .login_form .fotos_login {
@@ -241,7 +239,10 @@ main {
 .invalidlogin {
     color: red;
     /* display: none; */
-    visibility: hidden;
+}
+
+#invalidlogin {
+    color: red;
 }
 
 .popovercontainer {
@@ -382,7 +383,7 @@ main {
     display: flex;
     justify-content: center;
     width: 62vw;
-    height: 28vw;
+    height: 100%;
     overflow-y: scroll;
     overflow-x: hidden;
 }
@@ -428,19 +429,21 @@ main {
     font-size: 17px;
     background-color: transparent;
     width: 230px;
-    margin-bottom: 20px;
-    margin-top: 35px;
+    margin: 30px 0;
+    cursor: pointer;
 }
 
 .divmae {
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 88%;
 }
 
 .botaolixo {
     width: 26px;
     background: transparent;
+    cursor: pointer;
 }
 
 .ocupatudo {
@@ -536,6 +539,9 @@ h4 {
     width: 150px;
     height: 30px;
     margin-top: 20px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 .divbtn{
@@ -554,8 +560,26 @@ h4 {
     width: 20px;
     height: 20px;
     margin-left: 70px;
+    cursor: pointer;
 }
 
 .btnfecha{
     background-color: transparent;
+}
+
+.spandeerro{
+    display: flex;
+    justify-content: center;
+    color: red;
+}
+
+.desculpa_section {
+    height: 75%;
+    padding: 15px;
+}
+
+@media screen and (max-width: 1120px) {
+    .content_pages button {
+        padding: 0px 10px
+    }
 }

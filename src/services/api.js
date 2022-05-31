@@ -2,8 +2,8 @@ import axios from 'axios'
 import { GetItem } from './auth';
 
 export const db = axios.create({
-    baseURL: 'https://backfab.azurewebsites.net/api'
-    // baseURL: 'http://localhost:5000/api'
+    // baseURL: 'https://fabsolucoesback.azurewebsites.net/api'
+    baseURL: 'http://localhost:5000/api'
 })
 
 export const mock = axios.create({
