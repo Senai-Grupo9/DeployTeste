@@ -9,6 +9,7 @@ import excluirbtn from "../../assets/lixeira.png";
 import VideoFeed from "../../components/video-feed.tsx";
 import { mock, db } from "../../services/api";
 import axios from "axios";
+import { usuarioAutenticado } from "../../services/auth";
 
 export default function Home() {
 
@@ -31,6 +32,7 @@ export default function Home() {
     const [css2, set2] = useState(false);
     const [css3, set3] = useState(false);
     // const camElement = useRef(null);
+    const MINUTE_MS = 120000;
 
     function comparaswitch() {
         switch (valor) {
@@ -349,24 +351,34 @@ export default function Home() {
                 };
             })
             .catch(erro => console.log(erro));
-        console.log(list)
     }
 
     useEffect(getObjects, []);
+
 
     function getDetectedObjects() {
         db.post('/Camera/MakeRegisters/Camera')
             .then(resposta => {
                 console.log(resposta);
                 if (resposta.status === 200) {
-                    // setDetectedObjects(resposta.data);
-                    console.log("funfou!!")
+                    setDetectedObjects(resposta.data);
+                    console.log("Registros atualizados")
                 };
             })
-            .catch(erro => console.log('não funfou'));
+            .catch(erro =>
+                console.log('Nova tentativa de registro será executada em 2 minutos'),
+            );
+
+        getObjects()
     }
 
-    useEffect(getDetectedObjects, []);
+    useEffect(() => {
+        const interval = setInterval(() => {
+            getDetectedObjects()
+        }, MINUTE_MS);
+
+        return () => clearInterval(interval); // This represents the unmount function, in which you need to clear your interval to prevent memory leaks.
+    }, [])
 
     function toList() {
         var r = new RegExp(search.toLowerCase(), "g")

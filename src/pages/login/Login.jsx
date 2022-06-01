@@ -63,7 +63,7 @@ export default class Login extends Component {
         return (
 
             <main className="login_modal">
-                <form className="login_form">
+                <form onSubmit={this.efetuaLogin} className="login_form">
                     <h1>Bem Vindo</h1>
                     <span>Seja bem-vindo, digite suas credenciais.</span>
                     <div className="item">
@@ -93,7 +93,7 @@ export default class Login extends Component {
                         <button className="eye-pass" src={IconSenha} />
                     </div>
                     <button className="pass-forgor">Esqueci minha senha</button>
-                    <button className="Do-Login" onClick={this.efetuaLogin}>Entrar</button>
+                    <button className="Do-Login" typeof="submit">Entrar</button>
 
                     <div className="fotos_login">
                         <img src={logo} className="foto_logo" alt="Logo do projeto"></img>
