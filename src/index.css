@@ -583,3 +583,14 @@ h4 {
         padding: 0px 10px
     }
 }
+
+.botaoladotable{
+    display: flex;
+    margin-left: auto;
+    margin-right: 8%;
+    margin-bottom: 2%;
+}
+
+.buttonRegistros{
+    background-color: transparent;
+}

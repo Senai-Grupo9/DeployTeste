@@ -32,7 +32,7 @@ export default function Home() {
     const [css2, set2] = useState(false);
     const [css3, set3] = useState(false);
     // const camElement = useRef(null);
-    const MINUTE_MS = 120000;
+    const MINUTE_MS = 30000;
 
     function comparaswitch() {
         switch (valor) {
@@ -55,6 +55,7 @@ export default function Home() {
     function mostratelaCamera() {
         return (
             <div className="cam_content">
+                
                 <section className="search">
                     <input type="text" placeholder="O que você procura...?" onChange={onChange} />
                     <div className="list">
@@ -72,7 +73,7 @@ export default function Home() {
                     {
                         //toListDetectedObject()
                     } */}
-                    <iframe autoplay width="100%" height="100%" src="https://rtsp.me/embed/3TNKTEtE/" frameborder="0" allowfullscreen></iframe>
+                    <iframe width="100%" height="100%" src="https://rtsp.me/embed/3TNKTEtE/" frameborder="0"></iframe>
                 </section>
             </div>
         )
@@ -155,6 +156,20 @@ export default function Home() {
                 </section>
             </div>
         )
+    }
+
+    function resetaRegistros() {
+        db.delete('/RegistroObjetoes/ResetaRegistros', {
+            headers: {
+                'Authorization': 'Bearer ' + localStorage.getItem('usuario-login')
+            }
+        })
+            .then(res => {
+                if (res.status === 204) {
+                    buscarCheckins()
+                }
+            })
+            .catch(erro => console.log(erro))
     }
 
     function excluir(id, e) {
