@@ -480,11 +480,11 @@ export default function Home() {
                     <nav className="content_logo">
                         <div className="popovercontainer">
                             <img src={fab_logo} alt="logo da fab soluções" className="" />
-                            <span className="popover">
+                            {/* <span className="popover">
                                 FabSoluções<br />
                                 ID 509103<br />
                                 CheckIN 8:15<br />
-                            </span>
+                            </span> */}
                         </div>
                         <img src={logo} alt="Logo do Sistema Severino" />
                     </nav>
